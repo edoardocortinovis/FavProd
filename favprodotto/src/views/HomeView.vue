@@ -9,7 +9,7 @@
         <h2 style="color: white;">Round {{ currentRound + 1 }}</h2>
       </v-col>
       <v-col v-for="(product, index) in currentProductsFiltered" :key="index" cols="12" sm="6">
-        <v-card>
+        <v-card class="product-card">
           <v-img :src="product.images[0]" :alt="product.title" />
           <v-card-title>{{ product.title }}</v-card-title>
           <v-card-text>Prezzo: {{ product.price }}</v-card-text>
@@ -160,6 +160,11 @@ export default {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.product-card {
+  max-width: 600px; /* Imposta la larghezza massima della carta */
+  margin: auto; /* Centra la carta all'interno del contenitore */
 }
 
 .game-ended {
